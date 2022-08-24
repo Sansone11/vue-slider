@@ -18,16 +18,16 @@
 
         <ul class="slides-wrapper">
           <li class="slide active">
-            <img v-bind:src="{{img}}" alt="">
+            <img :src="slides[slideActive]" :alt="alt[slideActive]">
           </li>
           
         </ul>
 
         <div class="arrows">
-          <p class="arrow-prev">
+          <p class="arrow-prev" @click="prevSlide">
             <i class="fa-solid fa-chevron-left"></i>
           </p>
-          <p class="arrow-next">
+          <p class="arrow-next" @click="nextSlide">
             <i class="fa-solid fa-chevron-right"></i>
           </p>
         </div>

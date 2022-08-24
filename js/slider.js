@@ -14,7 +14,30 @@ const slides = [
 const root = new Vue({
 	el:'#root',
 	data:{
-		img:['./img/01.jpg','./img/02.jpg','./img/03.jpg','./img/04.jpg','./img/05.jpg',]
+		slides,
+		alt:['foto1','foto2','foto3','foto4','foto5',],
+		slideActive:0,
 	},
+	methods:{
+		nextSlide(){
+			if(this.slideActive>=this.slides.length-1){
+				this.slideActive=0
+			}else{	
+				this.slideActive++
+			}
+			
+		},
+		prevSlide(){
+			if(this.slideActive<=0){
+				this.slideActive=this.slides.length-1
+			}else{
+				
+			this.slideActive--
+			}
+		},
+	
+
+	}
+
 	
 })
